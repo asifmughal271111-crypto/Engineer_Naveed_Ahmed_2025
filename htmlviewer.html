@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Naveed Ahmad - Resume</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #2f4050;
+      --accent-color: #ff9800;
+      --light-accent: #ffcc80;
+      --light-bg: #f4f6f8;
+      --sidebar-bg: #f0f5f9;
+      --text-dark: #333;
+      --text-light: #666;
+      --text-lighter: #888;
+      --white: #ffffff;
+      --shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--light-bg);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 30px auto;
+      background: var(--white);
+      box-shadow: var(--shadow);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    
+    /* Header */
+    header {
+      background: var(--primary-color);
+      color: var(--white);
+      padding: 30px;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      position: relative;
+    }
+    
+    .photo {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: #ddd;
+      border: 4px solid var(--light-accent);
+      background-image: url('file:///C:/Users/Asif/Downloads/121.JPG');
+      background-size: cover;
+      background-position: center;
+      flex-shrink: 0;
+    }
+    
+    .header-info {
+      flex: 1;
+      min-width: 300px;
+    }
+    
+    .header-info h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    
+    .pmp-badge {
+      display: inline-flex;
+      align-items: center;
+      background: linear-gradient(135deg, #8E44AD 0%, #3498DB 100%);
+      color: white;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-left: 10px;
+    }
+    
+    .pmp-badge i {
+      margin-right: 5px;
+    }
+    
+    .header-info h2 {
+      margin: 8px 0 15px;
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--light-accent);
+    }
+    
+    .header-details {
+      font-size: 0.95rem;
+    }
+    
+    .header-details ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px 30px;
+    }
+    
+    .header-details li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    /* Content Layout */
+    .content {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    
+    .sidebar {
+      width: 30%;
+      background: var(--sidebar-bg);
+      padding: 30px 25px;
+      border-right: 1px solid #ddd;
+    }
+    
+    .sidebar-section {
+      margin-bottom: 30px;
+    }
+    
+    .sidebar h3 {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      color: var(--primary-color);
+      border-bottom: 2px solid var(--accent-color);
+      padding-bottom: 8px;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .sidebar h3 i {
+      font-size: 1rem;
+    }
+    
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .sidebar li {
+      margin-bottom: 10px;
+      padding-left: 20px;
+      position: relative;
+      font-size: 0.95rem;
+    }
+    
+    .sidebar li:before {
+      content: "•";
+      color: var(--accent-color);
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+    }
+    
+    .sidebar p {
+      font-size: 0.95rem;
+      margin: 0 0 15px;
+    }
+    
+    .main {
+      width: 70%;
+      padding: 30px;
+    }
+    
+    .main-section {
+      margin-bottom: 30px;
+    }
+    
+    .main h3 {
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      color: var(--primary-color);
+      border-left: 5px solid var(--accent-color);
+      padding-left: 15px;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .job {
+      margin-bottom: 25px;
+      padding-bottom: 20px;
+      border-bottom: 1px dashed #eee;
+    }
+    
+    .job:last-child {
+      border-bottom: none;
+    }
+    
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+      gap: 10px;
+    }
+    
+    .job h4 {
+      margin: 0;
+      font-size: 1.1rem;
+      color: var(--primary-color);
+    }
+    
+    .job span {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      margin-bottom: 10px;
+      display: block;
+    }
+    
+    .job ul {
+      padding-left: 20px;
+      margin: 15px 0;
+    }
+    
+    .job li {
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+    
+    .sub-resp {
+      margin: 15px 0 0 0;
+      padding: 15px;
+    }
+    
+    .sub-resp h4 {
+      color: var(--primary-color);
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+    
+    /* National Address Section */
+    .national-address {
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+    
+    .national-address h4 {
+      color: var(--primary-color);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .national-address p {
+      margin: 5px 0;
+      font-size: 0.9rem;
+    }
+    
+    /* PMP Certification with Logo */
+    .pmp-certification {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 15px;
+      padding: 10px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    .pmp-logo {
+      width: 40px;
+      height: 40px;
+      background: #2f4050;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    
+    .pmp-info {
+      flex: 1;
+    }
+    
+    .pmp-info h4 {
+      margin: 0;
+      color: var(--primary-color);
+      font-size: 1rem;
+    }
+    
+    .pmp-info p {
+      margin: 3px 0 0;
+      font-size: 0.85rem;
+      color: var(--text-light);
+    }
+    
+    /* Responsive design */
+    @media (max-width: 900px) {
+      .content {
+        flex-direction: column;
+      }
+      
+      .sidebar, .main {
+        width: 100%;
+      }
+      
+      .sidebar {
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+      }
+    }
+    
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px 20px;
+      }
+      
+      .photo {
+        margin: 0 auto;
+      }
+      
+      .header-info h1 {
+        font-size: 2rem;
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .header-details ul {
+        justify-content: center;
+      }
+      
+      .header-details li {
+        justify-content: center;
+      }
+      
+      .main, .sidebar {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Header -->
+    <header>
+      <div class="photo"></div>
+      <div class="header-info">
+        <h1>NAVEED AHMAD <span class="pmp-badge"><i class="fas fa-certificate"></i> PMP</span></h1>
+        <h2>TELECOM ENGINEER | PROJECT MANAGER</h2>
+        <div class="header-details">
+          <ul>
+            <li><i class="fas fa-envelope"></i> Nede141@gmail.com</li>
+            <li><i class="fas fa-phone"></i> 966507873518</li>
+            <li><i class="fas fa-map-marker-alt"></i> Riyadh, Saudi Arabia</li>
+            <li><i class="fas fa-birthday-cake"></i> 9 Mar, 1989</li>
+            <li><i class="fas fa-passport"></i> Pakistani</li>
+            <li><i class="fas fa-language"></i> Arabic | English | Urdu</li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <!-- Body Content -->
+    <div class="content">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-section">
+          <h3><i class="fas fa-map-marked-alt"></i> National Address</h3>
+          <div class="national-address">
+            <h4><i class="fas fa-home"></i> Residential Address</h4>
+            <p>Ibn Khaqal Road, Alnaseem East</p>
+            <p>Alnaseem District, Al-Nahda</p>
+            <p>Riyadh 12382, Saudi Arabia</p>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+          <p><strong>DAE in Telecommunications (2005 - 2008)</strong><br>
+          Govt College of Technology, Burewala, Pakistan</p>
+        </div>
+
+        <div class="sidebar-section">
+          <h3><i class="fas fa-certificate"></i> Certifications</h3>
+          <ul>
+            <li>Reichle & De-Massari Fiber Cable & Termination Box | R&M, Riyadh</li>
+            <li>Fiber Cable & Termination Box and Closures | Amwaj, Riyadh</li>
+          </ul>
+          
+          <!-- PMP Certification -->
+          <div class="pmp-certification">
+            <div class="pmp-logo">PMP</div>
+            <div class="pmp-info">
+              <h4>Project Management Professional (PMP)</h4>
+              <p>Project Management Institute (PMI)</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <h3><i class="fas fa-trophy"></i> Achievements</h3>
+          <p>Received appreciation from TAHAKOM, STC and NEOM-TAHAKOM projects in Saudi Arabia:</p>
+          <ul>
+            <li>TAHAKOM CCTV Fixed Speed Red-Light, Illegal Turn SDAIA Project</li>
+            <li>ARAMCO Project Face ID</li>
+            <li>NEOM CCTV Gantry Project</li>
+            <li>Successfully led and implemented multiple complex CCTV & Telecom projects</li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- Main -->
+      <div class="main">
+        <div class="main-section">
+          <h3><i class="fas fa-user"></i> Profile</h3>
+          <p>
+            Energetic, driven, and accomplished Project Manager 
+            with a track record of success in managing complex 
+            CCTV, Telecom and system integration projects. 
+            Sophisticated engineering skills with genuine 
+            enthusiasm for resolving different challenges. 
+            Led and implemented complex projects and Global 
+            teams, mitigated risks, managed requirements, and 
+            worked with project stakeholders while managing 
+            expectations at the department and project levels. 
+            Successful track record of building and maintaining 
+            great teams and of communicating effectively with all staff. 
+            Having a proven track record of meeting KPIs and motivating 
+            staff to work together to achieve targets and improve efficiency.
+          </p>
+        </div>
+
+        <div class="main-section">
+          <h3><i class="fas fa-briefcase"></i> Experience</h3>
+
+          <div class="job">
+            <div class="job-header">
+              <h4>Project Manager TAHAKOM</h4>
+              <span>Dec 2022 - Present</span>
+            </div>
+            <span>Future Horizons | Riyadh, Saudi Arabia</span>
+            <ul>
+              <li>TAHAKOM Projects CCTV Fixed Speed & Red Light</li>
+              <li>SADAIA Projects CCTV & Face Id camera</li>
+              <li>NEOM CCTV Project</li>
+              <li>ARAMCO Face ID Cameras Project</li>
+              <li>STC Projects FTTH MSAN Manage services Held order & NBB</li>
+            </ul>
+            <div class="sub-resp">
+              <h4>Key Responsibilities:</h4>
+              <ul>
+                <li>Led end-to-end project lifecycle, from initiation and planning to execution, monitoring, and closure.</li>
+                <li>Defined project scope, goals, deliverables, and success criteria in alignment with business objectives.</li>
+                <li>Developed detailed project plans, schedules, and budgets, ensuring on-time and within-budget delivery.</li>
+                <li>Managed cross-functional teams, stakeholders, and vendors to achieve project milestones.</li>
+                <li>Monitored progress, tracked KPIs, and mitigated risks through proactive issue resolution complete task with SLA time periods.</li>
+                <li>Ensured compliance with organizational standards, policies, and quality requirements.</li>
+                <li>Facilitated effective communication between stakeholders, sponsors, and team members.</li>
+                <li>Oversaw procurement, vendor management, and contract negotiations as required.</li>
+                <li>Supported change management initiatives to ensure smooth adoption of project outcomes.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="job">
+            <div class="job-header">
+              <h4>Site Manager</h4>
+              <span>Dec 2018 - Sep 2022</span>
+            </div>
+            <span>Future Horizons | Riyadh, Saudi Arabia</span>
+            <ul>
+              <li>Working in TAHAKOM CCTV Project</li>
+              <li>Civil Implementation, System Installation, System Configuration</li>
+              <li>Manage a team for Survey, Civil, Installation, and Configuration</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <div class="job-header">
+              <h4>Supervisor</h4>
+              <span>Nov 2016 - Nov 2018</span>
+            </div>
+            <span>Future Horizons | Riyadh</span>
+            <ul>
+              <li>Working with STC Project as a Supervisor</li>
+              <li>Manage services FTTH, NBB, and Held order Civil/Installation</li>
+              <li>Conducting PAT with STC HO Teams</li>
+              <li>Managing clerical aspects and coordinating departments</li>
+              <li>Perform reporting processes and organize data as per SOP</li>
+              <li>Coordinate with operations team to carry out SLA as per SOP</li>
+              <li>Organized induction and training sessions for new employees</li>
+              <li>Provided training to teams on fiber design concepts</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <div class="job-header">
+              <h4>Team Leader</h4>
+              <span>Jul 2012 - Jun 2016</span>
+            </div>
+            <span>Premier Technology | Dammam, Jubail, Saudi Arabia</span>
+            <ul>
+              <li>Driving operational efficiencies, raising customer service levels & cutting costs</li>
+              <li>Fiber cable Maintenance, and Repair at customer premises</li>
+              <li>Installation of fiber cable inside buildings through conduits or riser</li>
+              <li>Installing GPON network terminals, fast connectors, and activation/migration</li>
+              <li>Configuration of Echo Life (HG8245) GPON terminal</li>
+              <li>Ensuring compliance with safety guidelines and performing splicing activities</li>
+              <li>Locate and repair cable faults, validate service provisioning</li>
+              <li>Confirm accurate cable terminations on panels, hubs, and routers</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <div class="job-header">
+              <h4>Area Supervisor</h4>
+              <span>Sep 2009 - May 2012</span>
+            </div>
+            <span>Telecom Foundation | Lahore, Pakistan</span>
+            <ul>
+              <li>Lead optical fiber splicing team</li>
+              <li>FTTH Project with PTCL Lahore & Islamabad</li>
+              <li>Survey/Civil implementation for long haul Optical fiber backbone project</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <div class="job-header">
+              <h4>Sub-Engineer</h4>
+              <span>Sep 2008 - Jul 2009</span>
+            </div>
+            <span>Pepsi Haidri Beverages | Islamabad, Pakistan</span>
+            <ul>
+              <li>Operating Date Coding machines and managing labels on all types of beverages & water</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
